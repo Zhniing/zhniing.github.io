@@ -6,7 +6,13 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
   </head>
   <body>
-    {% include navigation.html %}
-    {{ content }}
+    <div class="wrapper">
+      <div class="clearfloat">
+        {% include navigation.html %}
+      </div>
+      <div>
+        {{ content }}
+      </div>
+    </div>
   </body>
 </html>

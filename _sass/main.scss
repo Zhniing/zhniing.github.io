@@ -1,3 +1,83 @@
 .current {
   color: green;
 }
+
+.wrapper {
+  max-width: 80ch;  // ch：一个'0'字符的宽度，CSS3新增
+  margin: 4rem auto;  // rem：html
+  padding: 0 1rem;
+}
+
+a, a:visited {
+  text-decoration: none;  // 去掉下划线
+  color: black;
+}
+
+code {
+  color: white;
+  background-color: gray;
+  padding: 0.1rem;
+  // display: block;  // 自动填充一行
+  // overflow-x: auto;
+}
+
+// 清除浮动
+// https://blog.csdn.net/qq_42354773/article/details/80926171
+// ??? 写在浮动元素的父级div上，要和下面的一起用
+.clearfloat :after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0
+}
+// ??? 适配ie浏览器，对chrome无影响
+.clearfloat {
+  zoom:1
+}
+
+nav {
+  margin: 0 0 4rem 0;
+}
+
+nav > a {
+  float: right;
+  padding: 0 1rem;;
+}
+
+h1 {
+  margin: 2rem 0;
+}
+
+.post_div {
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+// 标题链接悬停的下划线动画
+// https://blog.tmaize.net/
+.hover-underline {
+  position: relative;
+}
+.hover-underline:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #333333;
+  // visibility: hidden;  // 注释掉会有消失的收缩动画
+  transform: scaleX(0);
+  transition: transform 200ms ease-in-out;
+}
+.hover-underline:hover:after {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.post_date {
+  // position: relative;
+  // right: 0;  // 必须要绝对定位 否则不起作用
+  float: right;  // 还有其他方法吗？右靠齐
+}
