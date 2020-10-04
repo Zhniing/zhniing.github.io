@@ -1,7 +1,3 @@
-.current {
-  color: green;
-}
-
 .wrapper {
   max-width: 80ch;  // ch：一个'0'字符的宽度，CSS3新增
   margin: 4rem auto;  // rem：html
@@ -13,12 +9,30 @@ a, a:visited {
   color: black;
 }
 
+// 代码样式
 code {
-  color: white;
-  background-color: gray;
-  padding: 0.1rem;
+  // color: white;
+  background-color: #EEEEEE;
+  padding: 0 1ch;
   // display: block;  // 自动填充一行
   // overflow-x: auto;
+}
+
+pre {
+  background-color: #F7F7F7;
+  padding: 2ch;
+}
+
+pre code { // pre下的code
+  background-color: transparent;
+  padding: 0;
+}
+
+// 块引用
+blockquote {
+  border-left: 0.4ch solid #3d58a1;
+  background-color: #F7F7F7;
+  padding: 1ch 1ch 1ch 2ch;
 }
 
 // 清除浮动
@@ -40,7 +54,7 @@ nav {
   margin: 0 0 4rem 0;
 }
 
-nav > a {
+nav a {
   float: right;
   padding: 0 1rem;;
 }
