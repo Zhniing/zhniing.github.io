@@ -1,19 +1,29 @@
+body {
+  font-family: "Arial", "Microsoft YaHei", "宋体", sans-serif;
+  // font-family: serif;
+  font-size: 18px;
+  line-height: 3ch;
+}
+
 .wrapper {
-  max-width: 80ch;  // ch：一个'0'字符的宽度，CSS3新增
+  max-width: 90ch;  // ch：一个'0'字符的宽度，CSS3新增
   margin: 4rem auto;  // rem：html
   padding: 0 1rem;
 }
 
-a, a:visited {
+a {
   text-decoration: none;  // 去掉下划线
   color: black;
 }
 
 // 代码样式
 code {
-  // color: white;
   background-color: #EEEEEE;
-  padding: 0 1ch;
+  padding: 1px 1ch;
+  margin: 0 1ch;
+  // border-style: solid;
+  // border-width: 0.1px;
+  border-radius: 5px;
   // display: block;  // 自动填充一行
   // overflow-x: auto;
 }
@@ -21,11 +31,13 @@ code {
 pre {
   background-color: #F7F7F7;
   padding: 2ch;
+  border-radius: 10px;
 }
 
 pre code { // pre下的code
   background-color: transparent;
   padding: 0;
+  border: none;
 }
 
 // 块引用
@@ -43,11 +55,11 @@ blockquote {
   clear: both;
   content: "";
   visibility: hidden;
-  height: 0
+  height: 0;
 }
 // ??? 适配ie浏览器，对chrome无影响
 .clearfloat {
-  zoom:1
+  zoom:1;
 }
 
 nav {
@@ -56,14 +68,14 @@ nav {
 
 nav a {
   float: right;
-  padding: 0 1rem;;
+  padding: 0 1rem;
 }
 
 h1 {
   margin: 2rem 0;
 }
 
-.post_div {
+.post_item_div {
   margin: 1.5rem 0;
   width: 100%;
 }
@@ -94,4 +106,8 @@ h1 {
   // position: relative;
   // right: 0;  // 必须要绝对定位 否则不起作用
   float: right;  // 还有其他方法吗？右靠齐
+}
+
+.post_content a{
+  color: #1e6bb8;
 }
