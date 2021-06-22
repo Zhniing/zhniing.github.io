@@ -106,10 +106,38 @@ Idea：
 
    - 残差链接
    - 以下出自[TransUNet](https://github.com/Beckschen/TransUNet/blob/main/networks/vit_seg_modeling_resnet_skip.py)代码
+
      - 权值归一化的卷积（**stdconv**）
      - 组归一化Group Normalization（**GN**）替代BN
      - 激活函数Gaussian Error Linerar Units(**GELUs**)替代ReLU
-     - 激活函数**Swish**替代ReLU
-   > [激活函数](https://www.cnblogs.com/makefile/p/activation-function.html)
+     - 激活函数**Swish**替代ReLU（[激活函数ref](https://www.cnblogs.com/makefile/p/activation-function.html)）
 
    - 迁移学习
+
+---
+
+2021/6/22整理
+
+改进点：
+
+- [ ] 1. 双卷积改为resblock，bottleneck
+- [ ] 2. 卷积改为**stdconv**
+- [ ] 3. Layerlstm的**残差**连接
+- [ ] 4. **激活**函数（swish？）
+- [ ] 5. 引入部分**3D**卷积
+- [ ] 6. 减少层数（减少BCDLSTM）
+- [ ] 7. 减少BCDLSTM的长度，提高**并行**性
+- [ ] 8. **WN**权重正则化
+- [ ] 9. 多复用特征，dense？
+
+可能性较低的点：
+
+- [ ] 1. 多/单**模态**如何输入，在哪里输入
+- [ ] 2. **预处理**方法
+- [ ] 3. 引入**门控**在融合前筛选特征
+- [ ] 4. Light CNN
+
+难实现的点：
+
+- [ ] 1. 通过**置信度**（预测概率的绝对值大小）进一步优化结果
+- [ ] 2. **损失**函数（在1的基础上进一步定制损失函数？）
